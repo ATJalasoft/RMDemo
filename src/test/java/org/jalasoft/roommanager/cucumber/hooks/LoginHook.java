@@ -17,7 +17,6 @@ public class LoginHook {
     @Before(order = 1)
     public void beforeAll() {
         if (!beforeAllFlag) {
-            // Login as Primary
             LoginPage.loginAsPrimaryUser();
             beforeAllFlag = true;
         }
