@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by Alvaro Daza on 11/21/2016.
+ * This class  is in charge to manage resources actions.
  */
 public class ResourcesPage extends AbstractBasePage {
 
@@ -31,6 +31,9 @@ public class ResourcesPage extends AbstractBasePage {
 
     @FindBy(className = "ngCanvas")
     private WebElement allResourcesTable;
+
+    @FindBy(css = "button[class=\"info\"]")
+    private WebElement modalDialogRemoveButton;
 
 
     /**
@@ -83,6 +86,13 @@ public class ResourcesPage extends AbstractBasePage {
         return resourcesList.stream()
                 .filter(x -> x.getText().equals(resourceName))
                 .findAny().isPresent();
+    }
+
+    /**
+     * Click on remove of the modal dialog.
+     */
+    public void clickOnRemoveButtonModalDialog(){
+        modalDialogRemoveButton.click();
     }
 
     /**
