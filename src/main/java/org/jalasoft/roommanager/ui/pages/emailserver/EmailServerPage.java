@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
  * Created by Angela Valdez on 11/22/2016.
  */
 public class EmailServerPage extends AbstractBasePage {
-    @FindBy(linkText = "Add")
+    @FindBy(css = "div.button-set button[ng-click='openModal()']")
     private WebElement addButton;
 
     /**
