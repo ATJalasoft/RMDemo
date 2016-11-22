@@ -25,6 +25,8 @@ public final class DriverFactory {
         switch (browser) {
             case CHROME:
                 return new Chrome();
+            case FIREFOX:
+                return new Firefox();
             default:
                 throw new WebDriverException(BROWSER_NOT_FOUND_MSG);
         }
