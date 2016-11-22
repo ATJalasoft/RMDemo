@@ -1,6 +1,6 @@
-Feature: Add a project to a workspace.
+Feature: Email Server.
 
-  Scenario: Login in Todo ly
+  Scenario: Add a new email server with another already added
     Given I add an email server with the data
       | DOMAIN      | win-v5ujsn3jja5.autorm.local |
       | USER        | administrator                |
