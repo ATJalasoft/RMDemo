@@ -6,9 +6,10 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 
 /**
- * Created by Alvaro Daza on 11/21/2016.
+ * This class initialize the Chrome Selenium Web Driver.
  */
 public class FireFox implements Driver {
+
     private static final String WEB_DRIVER_PATH = "webdrivers/geckodriver.exe";
     private static final String WEB_DRIVER_KEY = "webdriver.gecko.driver";
 
