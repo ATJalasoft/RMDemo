@@ -34,6 +34,12 @@ public final class Environment {
 
     private static final String AUTHENTICATION_BROWSER = "browser";
 
+    private static final String DOMAIN = "domain";
+
+    private static final String USER_SERVER = "userServer";
+
+    private static final String PASS_SERVER = "passwordServer";
+
     private static final String TIMEOUT = "timeout";
 
     private static Environment environment;
@@ -147,13 +153,41 @@ public final class Environment {
     }
 
     /**
-     * Get the base url of pivotal tracker.
+     * Get the base url of room manager admin.
      *
      * @return String url.
      */
     public String getBaseUrl() {
         return getEnv(AUTHENTICATION_BASE_URL);
     }
+
+    /**
+     * Get the domain of exchange email server.
+     *
+     * @return String url.
+     */
+    public String getDomain() {
+        return getEnv(DOMAIN);
+    }
+
+    /**
+     * Get the user name og exchange e-mail server.
+     *
+     * @return String user name.
+     */
+    public String getUserServer() {
+        return getEnv(USER_SERVER);
+    }
+
+    /**
+     * Get the password of exchange e-mail server.
+     *
+     * @return String password.
+     */
+    public String getPasswordServer() {
+        return getEnv(PASS_SERVER);
+    }
+
 
 }
 
