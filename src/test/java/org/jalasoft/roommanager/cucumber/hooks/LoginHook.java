@@ -14,14 +14,11 @@ public class LoginHook {
     /**
      * Method to Login with the default user.
      */
-    @Before
+    @Before(order = 1)
     public void beforeAll() {
         if (!beforeAllFlag) {
             // Login as Primary
-            //   Sidebar sidebar = LoginPage.loginAsPrimaryUser();
-            //  sidebar.goToTopMenu();
             LoginPage.loginAsPrimaryUser();
-
             beforeAllFlag = true;
         }
     }
