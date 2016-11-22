@@ -32,6 +32,9 @@ public class ResourcesPage extends AbstractBasePage {
     @FindBy(className = "ngCanvas")
     private WebElement allResourcesTable;
 
+    @FindBy(css = "button[class=\"info\"]")
+    private WebElement modalDialogRemoveButton;
+
 
     /**
      * Set the values of the resource.
@@ -83,6 +86,13 @@ public class ResourcesPage extends AbstractBasePage {
         return resourcesList.stream()
                 .filter(x -> x.getText().equals(resourceName))
                 .findAny().isPresent();
+    }
+
+    /**
+     * Click on remove of the modal dialog.
+     */
+    public void clickOnRemoveButtonModalDialog(){
+        modalDialogRemoveButton.click();
     }
 
     /**
