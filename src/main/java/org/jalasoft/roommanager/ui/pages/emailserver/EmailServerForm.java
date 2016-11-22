@@ -7,6 +7,7 @@ import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DESC
 
 import java.util.HashMap;
 import java.util.Map;
+import org.jalasoft.roommanager.ui.pages.AbstractBasePage;
 import org.jalasoft.roommanager.ui.pages.Steps;
 import org.jalasoft.roommanager.utils.CommonActions;
 import org.openqa.selenium.WebElement;
@@ -16,7 +17,7 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Angela Valdez on 11/21/2016.
  */
-public class EmailServerForm {
+public class EmailServerForm extends AbstractBasePage{
 
     @FindBy(id = "add-mailserver-hostname")
     @CacheLookup
