@@ -80,6 +80,13 @@ public class ResourcesPage extends AbstractBasePage {
      * @return boolean.
      */
     public boolean findResource(final String resourceName) {
+        try{
+         Thread.sleep(500);
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+
+        }
         List<WebElement> resourcesList = allResourcesTable
                 .findElements(By.xpath("//span[contains(.,'" + resourceName + "')]"));
         return resourcesList.stream()
