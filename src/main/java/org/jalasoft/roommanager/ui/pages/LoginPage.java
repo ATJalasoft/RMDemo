@@ -1,7 +1,8 @@
 package org.jalasoft.roommanager.ui.pages;
 
 import org.jalasoft.roommanager.ui.browser.DriverManager;
-import org.jalasoft.roommanager.ui.pages.menu.TopMenu;
+import org.jalasoft.roommanager.ui.menus.TopMenu;
+import org.jalasoft.roommanager.ui.menus.Sidebar;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -46,9 +47,10 @@ public class LoginPage extends AbstractBasePage {
      *
      * @return The home page.
      */
-    public HomePage clickSignInButton() {
+    public Sidebar clickSignInButton() {
         singInButton.click();
-        return new HomePage();
+        return new Sidebar();
+
     }
 
     /**
@@ -58,7 +60,7 @@ public class LoginPage extends AbstractBasePage {
      * @param password Password used to perform a login to Mach2 application.
      * @return The login to Room Manager application.
      */
-    private static HomePage loginAs(final String userName, final String password) {
+    private static Sidebar loginAs(final String userName, final String password) {
         LoginPage loginPage = new LoginPage();
         loginPage.setUsernameTextField(userName);
         loginPage.setPasswordTextField(password);
@@ -72,20 +74,20 @@ public class LoginPage extends AbstractBasePage {
      * @param password Password to perform a login with other user.
      * @return The login to Room Manager application.
      */
-    public static HomePage loginOtherUser(final String userName, final String password) {
-        HomePage homePage;
+
+    public static Sidebar loginOtherUser(final String userName, final String password) {
+        Sidebar sidebar = new Sidebar();
         try {
-            homePage = new HomePage();
-            TopMenu topMenu = homePage.goToTopMenu();
+            TopMenu topMenu = new TopMenu();
             if (!topMenu.isUserLogged(topMenu.getUserName())) {
                 topMenu.logout();
-                homePage = loginAs(userName, password);
+                sidebar = loginAs(userName, password);
             }
         } catch (WebDriverException e) {
             DriverManager.getInstance().getDriver().get(Environment.getInstance().getBaseUrl());
-            homePage = loginAs(userName, password);
+            sidebar = loginAs(userName, password);
         }
-        return homePage;
+        return sidebar;
     }
 
     /**
@@ -93,7 +95,7 @@ public class LoginPage extends AbstractBasePage {
      *
      * @return Login to Room Manager application.
      */
-    public static HomePage loginAsPrimaryUser() {
+    public static Sidebar loginAsPrimaryUser() {
         String userNameValue = Environment.getInstance().getPrimaryUser();
         String passwordValue = Environment.getInstance().getPrimaryPassword();
         return loginOtherUser(userNameValue, passwordValue);

@@ -1,4 +1,4 @@
-package org.jalasoft.roommanager.ui.pages.menu;
+package org.jalasoft.roommanager.ui.menus;
 
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
@@ -12,14 +12,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Class to manage the Top menu Room Manager.
+ * Contains the elements and functionality of the top menu.
  */
 public class TopMenu extends AbstractBasePage {
 
     private static final int MIN_TIMEOUT = 3;
 
-    private static final Logger LOGGER = LogManager.getLogger(TopMenu.class);
-
+    private static final Logger LOGGER = LogManager.getLogger(org.jalasoft.roommanager.ui.menus.TopMenu.class);
 
     @FindBy(css = "span.ng-binding")
     private WebElement userLoggedName;
@@ -50,7 +49,7 @@ public class TopMenu extends AbstractBasePage {
         return userLogged;
     }
 
-     /**
+    /**
      * Method to knows if the user is logged.
      *
      * @param account The user account.
@@ -69,5 +68,4 @@ public class TopMenu extends AbstractBasePage {
         logOutButton.click();
         return new LoginPage();
     }
-
 }

@@ -1,6 +1,9 @@
 package org.jalasoft.roommanager.ui.pages.emailserver;
 
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.*;
+import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DOMAIN;
+import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.USER;
+import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.PASSWORD;
+import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DESCRIPTION;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,11 +52,11 @@ public class EmailServerForm {
     /**
      * Constructor that initialize the builder and hash map.
      *
-     * @param emailServerBuilder {@link EmailServerBuilder}
+     * @param newEmailServerBuilder {@link EmailServerBuilder}
      */
-    public EmailServerForm(final EmailServerBuilder emailServerBuilder) {
+    public EmailServerForm(final EmailServerBuilder newEmailServerBuilder) {
         valuesMap = new HashMap<>();
-        this.emailServerBuilder = emailServerBuilder;
+        this.emailServerBuilder = newEmailServerBuilder;
     }
 
     /**
@@ -136,7 +139,9 @@ public class EmailServerForm {
         return strategyMap;
     }
 
-
+    /**
+     * Clicks on save button of email server form.
+     */
     public void clickSaveButton() {
         CommonActions.clickElement(saveButton);
     }
@@ -160,15 +165,15 @@ public class EmailServerForm {
         /**
          * Constructor of the EmailServerBuilder class.
          *
-         * @param domain   Domain is a required field to create an email server.
-         * @param username User is required field to create an email server.
-         * @param password Password is a required field field to create an email server.
+         * @param newDomain   Domain is a required field to create an email server.
+         * @param newUsername User is required field to create an email server.
+         * @param newPassword Password is a required field field to create an email server.
          */
-        public EmailServerBuilder(final String domain, final String username, final String password) {
+        public EmailServerBuilder(final String newDomain, final String newUsername, final String newPassword) {
             strategyMap = new HashMap<>();
-            this.domain = domain;
-            this.username = username;
-            this.password = password;
+            this.domain = newDomain;
+            this.username = newUsername;
+            this.password = newPassword;
             strategyMap.put(DOMAIN, domain);
             strategyMap.put(USER, username);
             strategyMap.put(PASSWORD, password);
@@ -178,11 +183,11 @@ public class EmailServerForm {
         /**
          * Sets the description field in the form.
          *
-         * @param description Is the description of the email server.
+         * @param newDescription Is the description of the email server.
          * @return {@link EmailServerBuilder}
          */
-        public EmailServerBuilder setDescription(final String description) {
-            this.description = description;
+        public EmailServerBuilder setDescription(final String newDescription) {
+            this.description = newDescription;
             strategyMap.put(DESCRIPTION, description);
             return this;
         }
@@ -199,11 +204,11 @@ public class EmailServerForm {
         /**
          * Sets the customer domain in the form.
          *
-         * @param domain Is the new domain.
+         * @param newDomain Is the new domain.
          * @return {@link EmailServerBuilder}
          */
-        public EmailServerBuilder setDomain(final String domain) {
-            this.domain = domain;
+        public EmailServerBuilder setDomain(final String newDomain) {
+            this.domain = newDomain;
             strategyMap.put(DOMAIN, domain);
             return this;
         }
@@ -220,11 +225,11 @@ public class EmailServerForm {
         /**
          * Sets the custom username in the form.
          *
-         * @param username Is the new username.
+         * @param newUsername Is the new username.
          * @return {@link EmailServerBuilder}
          */
-        public EmailServerBuilder setUserServer(final String username) {
-            this.username= username;
+        public EmailServerBuilder setUserServer(final String newUsername) {
+            this.username = newUsername;
             strategyMap.put(USER, username);
             return this;
         }
@@ -241,11 +246,11 @@ public class EmailServerForm {
         /**
          * Sets the customer password in the form.
          *
-         * @param password Is the new password.
+         * @param newPassword Is the new password.
          * @return {@link EmailServerBuilder}
          */
-        public EmailServerBuilder setPasswordServer(final String password) {
-            this.password = password;
+        public EmailServerBuilder setPasswordServer(final String newPassword) {
+            this.password = newPassword;
             strategyMap.put(PASSWORD, password);
             return this;
         }
@@ -258,6 +263,7 @@ public class EmailServerForm {
         public String getPasswordServer() {
             return password;
         }
+
         /**
          * This method set the strategyMap contract.
          *
