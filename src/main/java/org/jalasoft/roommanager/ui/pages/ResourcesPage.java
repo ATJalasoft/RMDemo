@@ -1,6 +1,7 @@
 package org.jalasoft.roommanager.ui.pages;
 
 import java.util.List;
+import org.jalasoft.roommanager.utils.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,26 +46,24 @@ public class ResourcesPage extends AbstractBasePage {
      */
     public void setResourcesValues(final String resourceName, final String resourceDisplayName,
                                    final String resourceDescription) {
-        resourceNameTextField.clear();
-        resourceNameTextField.sendKeys(resourceName);
-        resourceDisplayNameTextField.clear();
-        resourceDisplayNameTextField.sendKeys(resourceDisplayName);
-        resourceDescriptionTextField.clear();
-        resourceDescriptionTextField.sendKeys(resourceDescription);
+        CommonActions.sendKeys(resourceNameTextField, resourceName);
+        CommonActions.sendKeys(resourceDisplayNameTextField, resourceDisplayName);
+        CommonActions.sendKeys(resourceDescriptionTextField, resourceDescription);
     }
 
     /**
      * Click on the add resource option.
      */
     public void clickOnAddResourceButton() {
-        addResourceButton.click();
+        CommonActions.clickElement(addResourceButton);
     }
 
     /**
      * Click on the save button.
      */
     public void clickOnSaveButton() {
-        resourceSaveButton.click();
+        CommonActions.clickElement(resourceSaveButton);
+
     }
 
     /**
@@ -91,8 +90,8 @@ public class ResourcesPage extends AbstractBasePage {
     /**
      * Click on remove of the modal dialog.
      */
-    public void clickOnRemoveButtonModalDialog(){
-        modalDialogRemoveButton.click();
+    public void clickOnRemoveButtonModalDialog() {
+        CommonActions.clickElement(modalDialogRemoveButton);
     }
 
     /**
@@ -103,12 +102,11 @@ public class ResourcesPage extends AbstractBasePage {
     public void clickOnCheckBox(final String resourceName) {
         List<WebElement> resourcesList = allResourcesTable
                 .findElements(By.cssSelector(" div[ng-style=\"rowStyle(row)\"]"));
-        //   .findElements(By.xpath("//span[contains(.,'" + resourceName + "')]"));
-        for (WebElement x : resourcesList) {
-            if (x.findElement(By.xpath("//span[contains(text(),'" + resourceName + "')]"))
+        for (WebElement elementRow : resourcesList) {
+            if (elementRow.findElement(By.xpath("//span[contains(text(),'" + resourceName + "')]"))
                     .getText().equals(resourceName)) {
-                //   x.findElement(By.cssSelector("div.ngCell.col0.colt0")).click();
-                x.click();
+                CommonActions.clickElement(elementRow);
+
             }
 
         }
