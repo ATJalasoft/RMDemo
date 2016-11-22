@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Created by Alvaro Daza on 11/21/2016.
+ * This class  is in charge to manage resources actions.
  */
 public class ResourcesPage extends AbstractBasePage {
 
