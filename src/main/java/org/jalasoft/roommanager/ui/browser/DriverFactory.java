@@ -26,7 +26,7 @@ public final class DriverFactory {
             case CHROME:
                 return new Chrome();
             case FIREFOX:
-                return new FireFox();
+                return new Firefox();
             default:
                 throw new WebDriverException(BROWSER_NOT_FOUND_MSG);
         }
