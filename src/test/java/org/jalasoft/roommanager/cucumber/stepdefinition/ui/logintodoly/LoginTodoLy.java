@@ -14,7 +14,7 @@ public class LoginTodoLy {
     @When("^I login$")
     public void iLoginSiQueSi() {
         LoginPage login = new LoginPage();
-        login.clickLoginButton();
+      //  login.clickLoginButton();
         login.loginAsPrimaryUser();
     }
 

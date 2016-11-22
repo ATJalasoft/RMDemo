@@ -8,4 +8,5 @@ package org.jalasoft.roommanager.ui.pages;
 public class HomePage extends AbstractBasePage {
 
 
+
 }

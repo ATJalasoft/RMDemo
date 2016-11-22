@@ -2,6 +2,7 @@ package org.jalasoft.roommanager.ui.pages;
 
 import org.jalasoft.roommanager.ui.browser.DriverManager;
 
+import org.jalasoft.roommanager.ui.menus.Sidebar;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,24 +12,24 @@ import org.openqa.selenium.support.FindBy;
  */
 public class LoginPage extends AbstractBasePage {
 
-    @FindBy(id = "ctl00_MainContent_LoginControl1_TextBoxEmail")
+    @FindBy(css = "input[id=\"loginUsername\"]")
     private WebElement usernameTextField;
 
-    @FindBy(css = "div[class='HPHeaderLogin']")
-    private WebElement clickLogin;
+//    @FindBy(css = "button.btn.btn-primary.pull-right")
+//    private WebElement clickLoginButton;
 
-    @FindBy(id = "ctl00_MainContent_LoginControl1_TextBoxPassword")
+    @FindBy(css = "input[id=\"loginPassword\"]")
     private WebElement passwordTextField;
 
-    @FindBy(id = "ctl00_MainContent_LoginControl1_ButtonLogin")
+    @FindBy(css = "button.btn.btn-primary.pull-right")
     private WebElement nextSigningButton;
 
     /**
      * This method set the username in the text field.
      */
-    public void clickLoginButton() {
-        clickLogin.click();
-    }
+//    public void clickLoginButton() {
+//        clickLoginButton.click();
+//    }
 
     /**
      * This method set the username in the text field.
@@ -55,9 +56,9 @@ public class LoginPage extends AbstractBasePage {
      *
      * @return The home page.
      */
-    public HomePage clickNextButton() {
+    public Sidebar clickNextButton() {
         nextSigningButton.click();
-        return new HomePage();
+        return new Sidebar();
     }
 
     /**
@@ -74,7 +75,7 @@ public class LoginPage extends AbstractBasePage {
      * @param password Password used to perform a login to Mach2 application.
      * @return The login to Mach2 application.
      */
-    private static HomePage loginAs(final String userName, final String password) {
+    private static Sidebar loginAs(final String userName, final String password) {
         LoginPage loginPage = new LoginPage();
         loginPage.setUsernameTextField(userName);
         loginPage.setPasswordTextField(password);
@@ -88,12 +89,12 @@ public class LoginPage extends AbstractBasePage {
      * @param password Password to perform a login with other user.
      * @return The login to Mach2 application.
      */
-    public static HomePage loginOtherUser(final String userName, final String password) {
-        HomePage homePage;
-            DriverManager.getInstance().getDriver().get(Environment.getInstance().getBaseUrl());
-            homePage = loginAs(userName, password);
+    public static Sidebar loginOtherUser(final String userName, final String password) {
+        Sidebar sidebar;
+        DriverManager.getInstance().getDriver().get(Environment.getInstance().getBaseUrl());
+        sidebar = loginAs(userName, password);
 
-        return homePage;
+        return sidebar;
     }
 
     /**
@@ -101,7 +102,7 @@ public class LoginPage extends AbstractBasePage {
      *
      * @return Login to Mach2 application.
      */
-    public static HomePage loginAsPrimaryUser() {
+    public static Sidebar loginAsPrimaryUser() {
         String userNameValue = Environment.getInstance().getPrimaryUser();
         String passwordValue = Environment.getInstance().getPrimaryPassword();
         return loginAs(userNameValue, passwordValue);
