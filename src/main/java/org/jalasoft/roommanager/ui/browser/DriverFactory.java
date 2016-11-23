@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriverException;
 /**
  * This class handle the logic related to what kind of browser.
  */
-public final class DriverFactory {
+ final class DriverFactory {
 
     private static final String BROWSER_NOT_FOUND_MSG = "Browser not found.";
 

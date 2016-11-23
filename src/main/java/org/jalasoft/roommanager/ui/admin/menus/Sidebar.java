@@ -1,8 +1,8 @@
-package org.jalasoft.roommanager.ui.menus;
+package org.jalasoft.roommanager.ui.admin.menus;
 
-import org.jalasoft.roommanager.ui.pages.AbstractBasePage;
-import org.jalasoft.roommanager.ui.pages.ResourcesPage;
-import org.jalasoft.roommanager.ui.pages.emailserver.EmailServerPage;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
+import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
+import org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerPage;
 import org.jalasoft.roommanager.utils.CommonActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,10 +1,10 @@
-package org.jalasoft.roommanager.ui.menus;
+package org.jalasoft.roommanager.ui.admin.menus;
 
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jalasoft.roommanager.ui.pages.AbstractBasePage;
-import org.jalasoft.roommanager.ui.pages.LoginPage;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
+import org.jalasoft.roommanager.ui.admin.pages.login.LoginPage;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriverException;
@@ -18,7 +18,7 @@ public class TopMenu extends AbstractBasePage {
 
     private static final int MIN_TIMEOUT = 3;
 
-    private static final Logger LOGGER = LogManager.getLogger(org.jalasoft.roommanager.ui.menus.TopMenu.class);
+    private static final Logger LOGGER = LogManager.getLogger(org.jalasoft.roommanager.ui.admin.menus.TopMenu.class);
 
     @FindBy(css = "span.ng-binding")
     private WebElement userLoggedName;

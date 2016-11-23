@@ -1,6 +1,7 @@
-package org.jalasoft.roommanager.ui.pages;
+package org.jalasoft.roommanager.ui.admin.pages.resource;
 
 import java.util.List;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
 import org.jalasoft.roommanager.utils.CommonActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

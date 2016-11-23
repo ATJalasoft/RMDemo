@@ -1,8 +1,9 @@
-package org.jalasoft.roommanager.ui.pages;
+package org.jalasoft.roommanager.ui.admin.pages.login;
 
 import org.jalasoft.roommanager.ui.browser.DriverManager;
-import org.jalasoft.roommanager.ui.menus.TopMenu;
-import org.jalasoft.roommanager.ui.menus.Sidebar;
+import org.jalasoft.roommanager.ui.admin.menus.TopMenu;
+import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
