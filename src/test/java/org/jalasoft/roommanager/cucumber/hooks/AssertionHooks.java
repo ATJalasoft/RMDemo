@@ -11,17 +11,12 @@ public final class AssertionHooks {
 
     private static Assertion assertion;
 
-    /**
-     * Private constructor.
-     */
-    private AssertionHooks() {
-    }
 
     /**
      * Instances a normal assert object.
      */
     @Before(order = 2)
-    public static void setUp() {
+    public  void setUp() {
         assertion = new Assertion();
     }
 
@@ -29,7 +24,7 @@ public final class AssertionHooks {
      * Instances a soft assert object.
      */
     @Before(value = "@softAssert")
-    public static void setUpSoftAssert() {
+    public void setUpSoftAssert() {
         assertion = new SoftAssert();
     }
 
