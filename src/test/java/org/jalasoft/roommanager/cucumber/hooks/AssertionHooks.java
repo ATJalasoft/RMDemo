@@ -15,7 +15,7 @@ public class AssertionHooks {
      * Instances a normal assert object.
      */
     @Before(order = 2)
-    public void setUp() {
+    public static void setUp() {
         assertion = new Assertion();
     }
 
@@ -23,12 +23,13 @@ public class AssertionHooks {
      * Instances a soft assert object.
      */
     @Before(value = "@softAssert")
-    public void setUpSoftAssert() {
+    public static void setUpSoftAssert() {
         assertion = new SoftAssert();
     }
 
     /**
      * Returns the assertion instance.
+     *
      * @return The assertion instance.
      */
     public static Assertion getAssertion() {

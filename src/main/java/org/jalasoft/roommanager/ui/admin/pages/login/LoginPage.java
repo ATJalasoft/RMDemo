@@ -1,9 +1,11 @@
 package org.jalasoft.roommanager.ui.admin.pages.login;
 
-import org.jalasoft.roommanager.ui.browser.DriverManager;
-import org.jalasoft.roommanager.ui.admin.menus.TopMenu;
-import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.jalasoft.roommanager.ui.AbstractBasePage;
+import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.jalasoft.roommanager.ui.admin.menus.TopMenu;
+import org.jalasoft.roommanager.ui.browser.DriverManager;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -13,6 +15,8 @@ import org.openqa.selenium.support.FindBy;
  * This class set  the user name and password in the main page and login.
  */
 public class LoginPage extends AbstractBasePage {
+
+    private static final Logger LOGGER = LogManager.getLogger(LoginPage.class);
 
     @FindBy(id = "loginUsername")
     private WebElement usernameTextField;
@@ -87,6 +91,7 @@ public class LoginPage extends AbstractBasePage {
         } catch (WebDriverException e) {
             DriverManager.getInstance().getDriver().get(Environment.getInstance().getBaseUrl());
             sidebar = loginAs(userName, password);
+            LOGGER.info("A user was already logged", e);
         }
         return sidebar;
     }

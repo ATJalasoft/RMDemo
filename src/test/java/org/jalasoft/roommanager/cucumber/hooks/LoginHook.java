@@ -15,7 +15,7 @@ public class LoginHook {
      * Method to Login with the default user.
      */
     @Before(order = 1)
-    public void beforeAll() {
+    public static void beforeAll() {
         if (!beforeAllFlag) {
             // Login as Primary
             LoginPage.loginAsPrimaryUser();
