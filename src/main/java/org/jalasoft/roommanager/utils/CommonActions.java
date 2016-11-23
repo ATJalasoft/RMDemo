@@ -52,7 +52,8 @@ public final class CommonActions {
         try {
             Thread.sleep(ONE_SECOND);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error("Fail in wait one second after clicking an element", e);
+            Thread.currentThread().interrupt();
         }
     }
 
