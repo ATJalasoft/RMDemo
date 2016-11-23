@@ -7,9 +7,15 @@ import org.testng.asserts.SoftAssert;
 /**
  * Class that instantiate the assertion according the requirements.
  */
-public class AssertionHooks {
+public final class AssertionHooks {
 
     private static Assertion assertion;
+
+    /**
+     * Private constructor.
+     */
+    private AssertionHooks() {
+    }
 
     /**
      * Instances a normal assert object.
