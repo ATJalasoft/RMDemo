@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public final class CommonActions {
 
     private static final Logger LOGGER = LogManager.getLogger(CommonActions.class);
-    public static final int HALF_SECOND = 500;
+    public static final int ONE_SECOND = 1000;
 
     /**
      * Constructor private.
@@ -48,9 +48,9 @@ public final class CommonActions {
     /**
      * Wait half second for some action.
      */
-    private static void waitHalfSecond() {
+    public static void waitHalfSecond() {
         try {
-            Thread.sleep(HALF_SECOND);
+            Thread.sleep(ONE_SECOND);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
