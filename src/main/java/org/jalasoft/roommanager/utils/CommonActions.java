@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public final class CommonActions {
 
     private static final Logger LOGGER = LogManager.getLogger(CommonActions.class);
-    public static final int HALF_SECOND = 500;
+    private static final int HALF_SECOND = 500;
 
     /**
      * Constructor private.
@@ -48,23 +48,12 @@ public final class CommonActions {
     /**
      * Wait half second for some action.
      */
-    private static void waitHalfSecond() {
+    public static void waitHalfSecond() {
         try {
             Thread.sleep(HALF_SECOND);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * This method waits and clickElement the element.
-     *
-     * @param element Element to wait and clickElement.
-     * @return text to element.
-     */
-    public static String getText(final WebElement element) {
-        DriverManager.getInstance().getWait().until(ExpectedConditions.visibilityOf(element));
-        return element.getText();
     }
 
 }

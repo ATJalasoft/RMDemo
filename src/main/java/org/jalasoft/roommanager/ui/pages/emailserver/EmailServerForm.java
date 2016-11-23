@@ -17,6 +17,8 @@ import org.openqa.selenium.support.FindBy;
 /**
  * Created by Angela Valdez on 11/21/2016.
  */
+
+
 public class EmailServerForm extends AbstractBasePage {
 
     @FindBy(id = "add-mailserver-hostname")

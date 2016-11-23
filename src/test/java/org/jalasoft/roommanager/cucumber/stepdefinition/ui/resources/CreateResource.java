@@ -35,6 +35,7 @@ public class CreateResource {
                                final String resourceDescription) {
         ResourcesPage resourcesPage = new ResourcesPage();
         resourcesPage.clickOnAddResourceButton();
+
         resourcesPage.setResourcesValues(resourceName, resourceDisplayName, resourceDescription);
         resourcesPage.clickOnSaveButton();
     }
@@ -60,6 +61,8 @@ public class CreateResource {
     public void deleteResource(final String resourceName) {
         ResourcesPage resourcePage = new ResourcesPage();
         resourcePage.clickOnCheckBox(resourceName);
+        resourcePage.clickOnDeleteButton();
+        resourcePage.clickOnRemoveButtonModalDialog();
 
     }
 
