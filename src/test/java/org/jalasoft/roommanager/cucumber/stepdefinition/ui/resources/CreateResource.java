@@ -60,6 +60,8 @@ public class CreateResource {
     public void deleteResource(final String resourceName) {
         ResourcesPage resourcePage = new ResourcesPage();
         resourcePage.clickOnCheckBox(resourceName);
+        resourcePage.clickOnDeleteButton();
+        resourcePage.clickOnRemoveButtonModalDialog();
 
     }
 
