@@ -5,8 +5,8 @@ import static org.junit.Assert.assertTrue;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.jalasoft.roommanager.ui.menus.Sidebar;
-import org.jalasoft.roommanager.ui.pages.ResourcesPage;
+import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
 
 /**
  * Created by Alvaro Daza on 11/21/2016.

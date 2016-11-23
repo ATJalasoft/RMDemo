@@ -1,4 +1,4 @@
-package org.jalasoft.roommanager.ui.pages.emailserver;
+package org.jalasoft.roommanager.ui.admin.pages.emailserver;
 
 /**
  * Enum for e-mail fields.

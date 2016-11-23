@@ -1,4 +1,4 @@
-package org.jalasoft.roommanager.ui.pages;
+package org.jalasoft.roommanager.ui;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

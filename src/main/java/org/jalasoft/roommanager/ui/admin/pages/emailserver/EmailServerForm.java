@@ -1,14 +1,14 @@
-package org.jalasoft.roommanager.ui.pages.emailserver;
+package org.jalasoft.roommanager.ui.admin.pages.emailserver;
 
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DOMAIN;
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.USER;
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.PASSWORD;
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DESCRIPTION;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.DOMAIN;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.USER;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.PASSWORD;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.DESCRIPTION;
 
 import java.util.HashMap;
 import java.util.Map;
-import org.jalasoft.roommanager.ui.pages.AbstractBasePage;
-import org.jalasoft.roommanager.ui.pages.Steps;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
+import org.jalasoft.roommanager.ui.Steps;
 import org.jalasoft.roommanager.utils.CommonActions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;

@@ -1,4 +1,4 @@
-package org.jalasoft.roommanager.ui.pages;
+package org.jalasoft.roommanager.ui;
 
 /**
  * The interface execute steps.

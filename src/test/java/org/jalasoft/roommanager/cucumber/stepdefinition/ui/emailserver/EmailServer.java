@@ -1,16 +1,16 @@
 package org.jalasoft.roommanager.cucumber.stepdefinition.ui.emailserver;
 
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.DOMAIN;
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.PASSWORD;
-import static org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum.USER;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.DOMAIN;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.PASSWORD;
+import static org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum.USER;
 
 import cucumber.api.java.en.Given;
 import java.util.HashMap;
 import java.util.Map;
-import org.jalasoft.roommanager.ui.menus.Sidebar;
-import org.jalasoft.roommanager.ui.pages.emailserver.EmailServerEnum;
-import org.jalasoft.roommanager.ui.pages.emailserver.EmailServerForm;
-import org.jalasoft.roommanager.ui.pages.emailserver.EmailServerPage;
+import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerEnum;
+import org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerForm;
+import org.jalasoft.roommanager.ui.admin.pages.emailserver.EmailServerPage;
 import org.jalasoft.roommanager.utils.Environment;
 
 /**

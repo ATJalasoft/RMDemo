@@ -1,9 +1,9 @@
-package org.jalasoft.roommanager.ui.pages.emailserver;
+package org.jalasoft.roommanager.ui.admin.pages.emailserver;
 
 import java.util.concurrent.TimeUnit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.jalasoft.roommanager.ui.pages.AbstractBasePage;
+import org.jalasoft.roommanager.ui.AbstractBasePage;
 import org.jalasoft.roommanager.utils.CommonActions;
 import org.jalasoft.roommanager.utils.Environment;
 import org.openqa.selenium.WebDriverException;

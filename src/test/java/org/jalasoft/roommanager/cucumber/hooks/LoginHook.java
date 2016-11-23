@@ -2,7 +2,7 @@ package org.jalasoft.roommanager.cucumber.hooks;
 
 
 import cucumber.api.java.Before;
-import org.jalasoft.roommanager.ui.pages.LoginPage;
+import org.jalasoft.roommanager.ui.admin.pages.login.LoginPage;
 
 /**
  * Class to initialize session.
