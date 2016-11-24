@@ -7,7 +7,8 @@ import org.jalasoft.roommanager.ui.admin.pages.login.LoginPage;
 /**
  * Class to initialize session.
  */
-public class LoginHook {
+
+public final class LoginHook {
 
     private static boolean beforeAllFlag;
 

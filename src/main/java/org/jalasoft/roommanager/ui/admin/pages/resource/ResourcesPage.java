@@ -3,8 +3,10 @@ package org.jalasoft.roommanager.ui.admin.pages.resource;
 import java.util.List;
 import org.jalasoft.roommanager.ui.AbstractBasePage;
 import org.jalasoft.roommanager.utils.CommonActions;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
+
 import org.openqa.selenium.support.FindBy;
 
 /**
@@ -41,21 +43,27 @@ public class ResourcesPage extends AbstractBasePage {
      * Click on the add resource option.
      */
     public void clickOnAddResourceButton() {
+
         CommonActions.clickElement(addResourceButton);
+
     }
 
     /**
      * Click on the save button.
      */
     public void clickOnSaveButton() {
+
         CommonActions.clickElement(resourceSaveButton);
+
     }
 
     /**
      * Click on the Delete button.
      */
     public void clickOnDeleteButton() {
+
         CommonActions.clickElement(resourceDeleteButton);
+
     }
 
     /**
@@ -65,10 +73,12 @@ public class ResourcesPage extends AbstractBasePage {
      * @return boolean.
      */
     public boolean findResource(final String resourceName) {
+
        return allResourcesTable2.stream()
                 .filter(x -> x.getText().equals(resourceName))
                 .findAny().isPresent();
     }
+
 
     /**
      * Click on remove of the modal dialog.
@@ -83,11 +93,13 @@ public class ResourcesPage extends AbstractBasePage {
      * @param resourceName String the name of the resource.
      */
     public void clickOnCheckBox(final String resourceName) {
+
         allResourcesTable.forEach(index -> {
             if (index.getText().equals(resourceName)) {
                 index.click();
             }
         });
+
     }
 
 }

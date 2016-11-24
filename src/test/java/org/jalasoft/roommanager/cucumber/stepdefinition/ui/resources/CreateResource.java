@@ -6,6 +6,7 @@ import java.util.Map;
 import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceEnum;
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceForm;
+
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
 
 /**
@@ -14,6 +15,7 @@ import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
 public class CreateResource {
 
      public static Map<ResourceEnum, String> resourceValues;
+
 
     /**
      * This is step definitions to log.
@@ -38,5 +40,6 @@ public class CreateResource {
         resourceForm.fillTheForm(resourceData);
         resourcesPage.clickOnSaveButton();
     }
+
 
 }

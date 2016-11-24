@@ -14,8 +14,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public final class CommonActions {
 
     private static final Logger LOGGER = LogManager.getLogger(CommonActions.class);
-    public static final int ONE_SECOND = 2000;
 
+    public static final int ONE_SECOND = 1000;
     /**
      * Constructor private.
      */
@@ -52,7 +52,8 @@ public final class CommonActions {
         try {
             Thread.sleep(ONE_SECOND);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOGGER.error("Fail in wait one second after clicking an element", e);
+            Thread.currentThread().interrupt();
         }
     }
 

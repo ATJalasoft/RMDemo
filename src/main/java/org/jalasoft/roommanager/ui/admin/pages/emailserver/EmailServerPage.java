@@ -42,7 +42,7 @@ public class EmailServerPage extends AbstractBasePage {
             wait.withTimeout(MIN_TIMEOUT, TimeUnit.SECONDS);
             CommonActions.clickElement(addButton);
         } catch (WebDriverException e) {
-            LOGGER.info("Add a new server when another is already added.");
+            LOGGER.info("Add a new server when another is already added.", e);
             clickRemoveEmailServer();
             CommonActions.clickElement(addButton);
         } finally {
