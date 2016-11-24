@@ -1,5 +1,6 @@
 package org.jalasoft.roommanager.ui.admin.pages.login;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jalasoft.roommanager.ui.AbstractBasePage;
@@ -15,6 +16,7 @@ import org.openqa.selenium.support.FindBy;
  * This class set  the user name and password in the main page and login.
  */
 public class LoginPage extends AbstractBasePage {
+
 
     private static final Logger LOGGER = LogManager.getLogger(LoginPage.class);
 
@@ -91,6 +93,7 @@ public class LoginPage extends AbstractBasePage {
         } catch (WebDriverException e) {
             DriverManager.getInstance().getDriver().get(Environment.getInstance().getBaseUrl());
             sidebar = loginAs(userName, password);
+
             LOGGER.info("A user was already logged", e);
         }
         return sidebar;

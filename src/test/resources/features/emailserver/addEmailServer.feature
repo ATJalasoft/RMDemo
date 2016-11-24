@@ -7,4 +7,6 @@ Feature: Email Server.
       | PASSWORD    | Control123                   |
       | DESCRIPTION | Hello baby                   |
     Given I add an email server by default
-#    And I send a POST request to projects.json
+
+
+
