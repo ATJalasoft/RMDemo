@@ -15,7 +15,6 @@ import org.openqa.selenium.support.FindBy;
  * Created by Angela Valdez on 11/22/2016.
  */
 public class EmailServerPage extends AbstractBasePage {
-
     private static final int MIN_TIMEOUT = 3;
 
     private static final Logger LOGGER = LogManager.getLogger(EmailServerPage.class);
@@ -55,7 +54,6 @@ public class EmailServerPage extends AbstractBasePage {
 
     /**
      * Deletes an email server.
-     *
      * @return {@link EmailServerPage}
      */
     public EmailServerPage clickRemoveEmailServer() {

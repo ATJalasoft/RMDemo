@@ -7,16 +7,18 @@ import org.testng.asserts.SoftAssert;
 /**
  * Class that instantiate the assertion according the requirements.
  */
+
+
 public final class AssertionHooks {
 
     private static Assertion assertion;
-
 
     /**
      * Instances a normal assert object.
      */
     @Before(order = 2)
-    public  void setUp() {
+
+    public void setUp() {
         assertion = new Assertion();
     }
 
@@ -29,8 +31,6 @@ public final class AssertionHooks {
     }
 
     /**
-     * Returns the assertion instance.
-     *
      * @return The assertion instance.
      */
     public static Assertion getAssertion() {

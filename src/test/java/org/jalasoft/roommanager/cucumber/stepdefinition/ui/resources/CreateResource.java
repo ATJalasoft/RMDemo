@@ -1,18 +1,19 @@
 package org.jalasoft.roommanager.cucumber.stepdefinition.ui.resources;
 
-import static org.junit.Assert.assertTrue;
-
 import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import java.util.Map;
 import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
+import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceEnum;
+import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceForm;
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
 
 /**
- * Created by Alvaro Daza on 11/21/2016.
+ * This class is to the steps definitions of resources.
  */
 public class CreateResource {
 
+    private Map<ResourceEnum, String> resourceValues;
 
     /**
      * This is step definitions to log.
@@ -24,45 +25,26 @@ public class CreateResource {
     }
 
     /**
-     * create a resource.
+     * Fill all fields to the Resource page.
      *
-     * @param resourceName        String whit the name of the resource.
-     * @param resourceDisplayName String Whit the name of the resource that will be displayed.
-     * @param resourceDescription String whit the resource description.
+     * @param resourceData Map whit the resource data.
      */
-    @When("^I create the resource whit the name: (.*) ,display name: (.*) and description: (.*)$")
-    public void createResource(final String resourceName, final String resourceDisplayName,
-                               final String resourceDescription) {
+    @When("^I fill the data whit the following values$")
+    public void fillTheResourcesForm(final Map<ResourceEnum, String> resourceData) {
+        resourceValues = resourceData;
         ResourcesPage resourcesPage = new ResourcesPage();
         resourcesPage.clickOnAddResourceButton();
-        resourcesPage.setResourcesValues(resourceName, resourceDisplayName, resourceDescription);
+        ResourceForm resourceForm = new ResourceForm();
+        resourceForm.fillTheForm(resourceData);
         resourcesPage.clickOnSaveButton();
     }
 
     /**
-     * Verify if the resource exist.
-     *
-     * @param resourceName String resources name.
+     * This method.
+     * @return ba.
      */
-    @Then("^The resource (.*) is created$")
-    public void existResource(final String resourceName) {
-        ResourcesPage resourcesPage = new ResourcesPage();
-        assertTrue(resourcesPage.findResource(resourceName));
-
-    }
-
-    /**
-     * Delete a resource.
-     *
-     * @param resourceName String the resources name.
-     */
-    @Then("^The resource (.*) is deleted$")
-    public void deleteResource(final String resourceName) {
-        ResourcesPage resourcePage = new ResourcesPage();
-        resourcePage.clickOnCheckBox(resourceName);
-        resourcePage.clickOnDeleteButton();
-        resourcePage.clickOnRemoveButtonModalDialog();
-
+    public  Map<ResourceEnum, String> getResourceValues() {
+        return resourceValues;
     }
 
 }
