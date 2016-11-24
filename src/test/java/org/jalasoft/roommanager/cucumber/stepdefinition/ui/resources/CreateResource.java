@@ -6,16 +6,14 @@ import java.util.Map;
 import org.jalasoft.roommanager.ui.admin.menus.Sidebar;
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceEnum;
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourceForm;
-
 import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
 
 /**
- * Created by Alvaro Daza on 11/21/2016.
+ * This class is to the steps definitions of resources.
  */
 public class CreateResource {
 
-     public static Map<ResourceEnum, String> resourceValues;
-
+    private Map<ResourceEnum, String> resourceValues;
 
     /**
      * This is step definitions to log.
@@ -41,5 +39,12 @@ public class CreateResource {
         resourcesPage.clickOnSaveButton();
     }
 
+    /**
+     * This method.
+     * @return ba.
+     */
+    public  Map<ResourceEnum, String> getResourceValues() {
+        return resourceValues;
+    }
 
 }

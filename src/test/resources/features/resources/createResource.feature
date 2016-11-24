@@ -3,7 +3,6 @@ Feature: Create Resources
 
   Scenario: Create a resource
     Given  I want create a resource
-
     When  I fill the data whit the following values
       | NAME                 | monitor           |
       | DISPLAY_NAME         | Monitor for Games |
