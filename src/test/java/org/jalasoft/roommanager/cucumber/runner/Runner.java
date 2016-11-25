@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
  * Class to execute all feature tests.
  */
 @CucumberOptions(
-        
+
         monochrome = true,
         format = {"pretty",
                 "html:target/test-report",
