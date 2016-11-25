@@ -1,12 +1,11 @@
 package org.jalasoft.roommanager.api;
 
+import static io.restassured.RestAssured.given;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-
 import java.util.Map;
-
-import static io.restassured.RestAssured.given;
 
 /**
  * Class to manage the Request.
@@ -30,6 +29,7 @@ public final class RequestManager {
      */
     public static Response get(final String endPoint) {
         return given().spec(REQUEST_SPECIFICATION)
+                .contentType(ContentType.JSON)
                 .when()
                 .get(endPoint);
     }
