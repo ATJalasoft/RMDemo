@@ -41,10 +41,12 @@ public class ResourcesPage extends AbstractBasePage {
 
     /**
      * Click on the add resource option.
+     *
+     * @return ResourceForm.
      */
-    public void clickOnAddResourceButton() {
-
+    public ResourceForm clickOnAddResourceButton() {
         CommonActions.clickElement(addResourceButton);
+        return new ResourceForm();
 
     }
 
@@ -74,7 +76,7 @@ public class ResourcesPage extends AbstractBasePage {
      */
     public boolean findResource(final String resourceName) {
 
-       return allResourcesTable2.stream()
+        return allResourcesTable2.stream()
                 .filter(x -> x.getText().equals(resourceName))
                 .findAny().isPresent();
     }

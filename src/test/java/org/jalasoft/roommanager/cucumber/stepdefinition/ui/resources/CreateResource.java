@@ -13,15 +13,18 @@ import org.jalasoft.roommanager.ui.admin.pages.resource.ResourcesPage;
  */
 public class CreateResource {
 
+    private ResourcesPage resourcesPage;
+    private ResourceForm resourceForm;
+
     private Map<ResourceEnum, String> resourceValues;
 
     /**
      * This is step definitions to log.
      */
-    @Given("^I want create a resource$")
+    @Given("^I go to the resource page$")
     public void goToResourcesPage() {
         Sidebar sidebar = new Sidebar();
-        sidebar.goToResources();
+        resourcesPage = sidebar.goToResources();
     }
 
     /**
@@ -29,21 +32,20 @@ public class CreateResource {
      *
      * @param resourceData Map whit the resource data.
      */
-    @When("^I fill the data whit the following values$")
+    @When("^I create a resource with the following values$")
     public void fillTheResourcesForm(final Map<ResourceEnum, String> resourceData) {
         resourceValues = resourceData;
-        ResourcesPage resourcesPage = new ResourcesPage();
-        resourcesPage.clickOnAddResourceButton();
-        ResourceForm resourceForm = new ResourceForm();
+        resourceForm = resourcesPage.clickOnAddResourceButton();
         resourceForm.fillTheForm(resourceData);
         resourcesPage.clickOnSaveButton();
     }
 
     /**
      * This method.
+     *
      * @return ba.
      */
-    public  Map<ResourceEnum, String> getResourceValues() {
+    public Map<ResourceEnum, String> getResourceValues() {
         return resourceValues;
     }
 

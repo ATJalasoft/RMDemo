@@ -105,8 +105,8 @@ public class LoginPage extends AbstractBasePage {
      * @return Login to Room Manager application.
      */
     public static Sidebar loginAsPrimaryUser() {
-        String userNameValue = Environment.getInstance().getPrimaryUser();
-        String passwordValue = Environment.getInstance().getPrimaryPassword();
+         String userNameValue = Environment.getInstance().getPrimaryUser();
+         String passwordValue = Environment.getInstance().getPrimaryPassword();
         return loginOtherUser(userNameValue, passwordValue);
     }
 }
