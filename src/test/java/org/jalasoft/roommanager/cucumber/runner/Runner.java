@@ -9,19 +9,19 @@ import org.testng.annotations.AfterClass;
  * Class to execute all feature tests.
  */
 @CucumberOptions(
-//        features = "src/test/resources/"
-//        monochrome = true,
-//        format = {"pretty",
-//                "html:target/test-report",
-//                "json:target/test-report.json",
-//                "junit:target/test-report.xml"
-//        },
-//        features = {
-//                "src/test/resources/"
-//        },
-//        glue = {
-//                "org.jalasoft.roommanager.cucumber"
-//        }
+        
+        monochrome = true,
+        format = {"pretty",
+                "html:target/test-report",
+                "json:target/test-report.json",
+                "junit:target/test-report.xml"
+        },
+        features = {
+                "src/test/resources/"
+        },
+        glue = {
+                "org.jalasoft.roommanager.cucumber"
+        }
 )
 public final class Runner extends AbstractTestNGCucumberTests {
 
